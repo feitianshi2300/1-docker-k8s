@@ -1,0 +1,1 @@
+docker build -t php74-fpm-websocket .
