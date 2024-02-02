@@ -1,7 +1,7 @@
 version: '3.8.2'
 
   api2-nginx:
-    image: ks-nginx
+    image: nginx
     restart: always
     container_name: test-api2-nginx
     build: ../../../images/openresty
@@ -9,8 +9,8 @@ version: '3.8.2'
       - ./config/api2/nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./config/api2/nginx/vhost:/server/vhost
       - /data/www/api2:/data/www/api2
-      - /data/www/ks_webpc:/data/www/ks_webpc
-      - /data/www/ks_webh5:/data/www/ks_webh5
+      - /data/www/api3:/data/www/api3
+      - /data/www/api4:/data/www/api4
       - ./logs/api2/nginx:/server/logs/api2
       - ./logs/api2/nginx:/data/www/api2/storage/logs/
     working_dir: /server/logs/api2
@@ -23,7 +23,7 @@ version: '3.8.2'
       - test
 
   api2-php:
-    image: ks-php74-fpm
+    image: php74-fpm
     container_name: test-api2-php
     restart: always
     build: ../../../images/php/7.4

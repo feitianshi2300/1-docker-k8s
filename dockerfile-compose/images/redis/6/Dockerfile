@@ -1,7 +1,7 @@
 FROM redis:6.2.14-alpine
 
 RUN apk add --no-cache tzdata redis \
-    && mkdir -p /server/logs/ks_waf \
+    && mkdir -p /server/logs/api1 \
     && mkdir -p /var/log/redis \
     && chown -R redis:redis /var/log/redis
 
