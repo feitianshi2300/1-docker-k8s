@@ -1,0 +1,1 @@
+docker build -t php82-fpm .
